@@ -1,15 +1,3 @@
-FROM node:16-alpine as builder
-WORKDIR /app
-COPY package.json package-lock.json /app/
-COPY . .
-RUN npm ci
-RUN npm run build
-
-
-FROM nginx:1.21.0-alpine
-	
-
-COPY --from=builder /app/nginx.conf /etc/nginx/nginx.default
-COPY --from=builder /app/build/ /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
-EXPOSE 3000
+FROM envoyproxy/envoy-dev:latest
+COPY envoy.yaml /etc/envoy/envoy.yaml
+RUN chmod go+r /etc/envoy/envoy.yaml

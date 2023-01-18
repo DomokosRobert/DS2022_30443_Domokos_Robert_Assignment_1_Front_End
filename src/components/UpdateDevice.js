@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import DeviceService from '../services/DeviceService';
-import CustomerService from '../services/CustomerService';
+import DeviceService from './services/DeviceService';
+import CustomerService from './services/CustomerService';
 
 class UpdateDevicePage extends Component {
     constructor(props){

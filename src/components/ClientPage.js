@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DeviceService from '../services/DeviceService';
+import DeviceService from './services/DeviceService';
 import SockJsClient from 'react-stomp';
 
 const SOCKET_URL = 'http://localhost:8080/websocket';
@@ -18,6 +18,7 @@ class ClientPage extends Component {
             }
         }
         this.backToMain = this.backToMain.bind(this);
+        this.chat=this.chat.bind(this);
     }
     componentDidMount(){
         DeviceService.getDevicesByCustomer(this.state.id).then(res => {
@@ -26,6 +27,9 @@ class ClientPage extends Component {
     }
     backToMain(){
         this.props.history.push('/');
+    }
+    chat(){
+        this.props.history.push('/chatapp');
     }
     render() {
         return (
@@ -48,6 +52,9 @@ class ClientPage extends Component {
                 <h2 className ="text-center">My Devices</h2>
                 <div className="row">
                     <button className="btn btn-primary" onClick={this.backToMain}> Log Out</button>
+                </div>
+                <div className="row">
+                    <button className="btn btn-primary" onClick={this.chat}> Group Chat</button>
                 </div>
                 <div className = "row">
                     <table className= "table table-striped table-bordered">

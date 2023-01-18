@@ -7,13 +7,16 @@ class IndexComponent extends Component {
             
         }
     
+        
     }
+    
     render() {
         return (
             <div>
                 <div className="btn-group mr-2">
                     <button onClick = {()=> this.props.history.push('/customers')} className = "btn btn-info" >Customers</button>
                     <button onClick = {()=> this.props.history.push('/devices')} className = "btn btn-info" >Devices</button>
+                    <button onClick = {()=> this.props.history.push('/chatapp')} className = "btn btn-info" >Chat</button>
                     <button onClick = {()=> this.props.history.push('/')} className = "btn btn-info" >Log Out</button>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CustomerService from '../services/CustomerService';
-import DeviceService from '../services/DeviceService';
+import CustomerService from './services/CustomerService';
+import DeviceService from './services/DeviceService';
 
 class InsertDevicePage extends Component {
     constructor(props){

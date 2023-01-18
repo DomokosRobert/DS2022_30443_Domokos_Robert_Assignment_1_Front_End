@@ -14,6 +14,7 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import FailPage from './components/FailPage';
 import ClientPage from './components/ClientPage';
+import ChatApp from "./components/ChatApp";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
                   <Route path ="/register" component = {RegisterPage}></Route>
                   <Route path ="/failed" component = {FailPage}></Route>
                   <Route path ="/client-page/:id" component = {ClientPage}></Route>
+                  <Route path ="/chatapp" component = {ChatApp}></Route>
                 </Switch>
             </div>
           <FooterComponent/>

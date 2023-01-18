@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DeviceService from '../services/DeviceService';
+import DeviceService from './services/DeviceService';
 
 class ListDevicesComponent extends Component {
     constructor(props){
